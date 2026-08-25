@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "./styles/reset.css" layer(base);
+@import "./styles/layout.css" layer(base);
+@import "./styles/components.css" layer(components);
+
+@theme{
+    --color-body-dark: #0D0D0D;
+    --color-green: #15986E;
+    --color-gray-one: #575556;
+    --color-gray: #DFDFDF;
+    --color-black: #333333;
+    --color-gray-white: rgba(255, 255, 255, 1);
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-simple {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.crimson-text-bold {
+    font-family: "Crimson Text", serif;
+    font-style: normal;
+    font-weight: 700;
+}

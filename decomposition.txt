@@ -1,0 +1,6 @@
+Input.jsx (input+bouton d'ajout)
+Data.jsx (tableau de donnée , Data.jsx qui retourne le checked + task + delete)
+Checked.jsx
+Delete.jsx
+Eye.jsx
+Theme.jsx

@@ -1,0 +1,7 @@
+.checked--flex{
+@apply flex justify-between;
+}
+
+.button--flex-col{
+    @apply flex flex-col gap-0.5;
+}

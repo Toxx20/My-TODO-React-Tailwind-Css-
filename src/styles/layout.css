@@ -1,0 +1,20 @@
+
+.body--page{
+    @apply min-h-svh flex flex-col justify-center box-border;
+}
+
+.container{
+    @apply flex flex-col gap-2 w-full h-auto p-[5%];
+}
+
+.head--container{
+    @apply flex justify-between items-center;
+}
+
+.body--container{
+    @apply grid auto-rows-13.5 gap-5;
+}
+
+.foot--container{
+    @apply flex flex-col gap-2.5;
+}
