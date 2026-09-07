@@ -6,7 +6,7 @@ import { Delete } from "./Delete.jsx"
  * @returns 
  */
 export function Data({title,valueChecked,onClick,onDeleteData}){
-    return <div className="checked--flex roboto-simple text-gray">
+    return <div className="checked--flex rounded-xl roboto-simple px-2.5 border border-gray-one text-gray-one dark:text-gray">
             <Checked value={valueChecked}  onClick={onClick} ></Checked>
         {title}
             <Delete onClick={onDeleteData}></Delete>

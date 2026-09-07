@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import "./styles/reset.css" layer(base);
 @import "./styles/layout.css" layer(base);
 @import "./styles/components.css" layer(components);
@@ -10,6 +12,7 @@
     --color-gray: #DFDFDF;
     --color-black: #333333;
     --color-gray-white: rgba(255, 255, 255, 1);
+    --color-orange: #FF8D28;
 }
 
 .roboto-bold {
