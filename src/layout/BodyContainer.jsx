@@ -58,7 +58,7 @@ export function BodyContainer({ThemeTodo,FnDarkTheme,FnLightTheme}) {
         e.preventDefault()
         const formData = new FormData(e.target)
         const postData = formData.get('inputData')
-        const postDataLenght = postData.split("")
+        const postDataLenght = postData.trim().split("")
         if (postDataLenght.length < 2){
           setAletrt(true)
         }else{
