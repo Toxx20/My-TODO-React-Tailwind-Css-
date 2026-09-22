@@ -4,7 +4,9 @@ import { BodyContainer } from "./layout/BodyContainer.jsx";
 
 function App() {
   // theme de Todo
-  const [theme,setTheme]=useState('dark')
+  const [theme,setTheme]=useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  })
 
   const themeTodo = theme === 'dark'
 
@@ -17,12 +19,14 @@ function App() {
   }
 
   useEffect(()=>{
+    localStorage.setItem("theme",theme)
     if(theme === 'dark'){
       document.documentElement.classList.add('dark')
     }
     else{
       document.documentElement.classList.remove('dark')
     }
+
   },[theme])
   
   return (

@@ -73,7 +73,7 @@ export function BodyContainer({ThemeTodo,FnDarkTheme,FnLightTheme}) {
             setPostData('')
       }
 
-      const loading = <div className="text-amber-500">Chargement des donnnées ...</div>
+      const loading = <div className="text-amber-500">Loading data ...</div>
 
       //Compter le nombre de todo de valeur true
       const nbTrueData= data.filter(el =>el.completed === true).length
