@@ -5,16 +5,15 @@ import { Button } from "./Button.jsx"
  * @param {function} onChange 
  * @returns {JSX}
  */
-export function Input({value,onChange,onSubmit,onKeyDown,onClickButtonAdd}){
+export function Input({name,onSubmit}){
     return <form className="checked--flex" onSubmit={onSubmit}>
         <input type="text"
                 id="ka" 
+                name={name}
                 placeholder="Add new task" 
                 className="roboto-bold text-[16px] placeholder:text-gray-one dark:text-gray border-b border-gray-one dark:border-amber-100 w-[90%] h-12"
-                value={value}
-                onChange={(e)=>onChange(e.target.value)}
-                onKeyDown={onKeyDown} />
-        <Button type="button" onClick={onClickButtonAdd} title="Add"
+        />
+        <Button type="submit" title="Add"
             children={<i> 
                     <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-7">
                     <rect width="33" height="33" rx="5" fill="#575556"/>

@@ -50,28 +50,24 @@ export function BodyContainer({ThemeTodo,FnDarkTheme,FnLightTheme}) {
         <Data key={i} title={e.title} valueChecked={e.completed}  onClick={() => toggleCompleted(e.id)} onDeleteData={()=> toggleDeleteTodo(e.id)} ></Data>
       )
 
-
-      //Envoyer les données entrés
-      const [postData,setPostData]=useState('')
+      // alert à afficher en cas d'erreur sur la taille de todo
+      const [alert,setAletrt]=useState(false)
 
       //Empêcher la soumition du formulaire
       function handleSubmit(e){
         e.preventDefault()
-      }
-
-      //valider les données en entrant avec la touche 'Enter'
-      function handleKeyDown(e){
-        if (e.key === 'Enter') {
-            setdata(prev =>[dataCreated(data.length+1,postData),...prev])
-            setPostData('')
-          }
+        const formData = new FormData(e.target)
+        const postData = formData.get('inputData')
+        const postDataLenght = postData.split("")
+        if (postDataLenght.length < 2){
+          setAletrt(true)
+        }else{
+          setdata((prev)=>[dataCreated(data.length+1,postData),...prev])
+          setAletrt(false)
+          e.target.reset()
         }
-
-      //Ajouter les données en cliquant sur le bouton Plus
-      function handleClickAdd(){
-        setdata(prev =>[dataCreated(data.length+1,postData),...prev])
-            setPostData('')
       }
+
 
       const loading = <div className="text-amber-500">Loading data ...</div>
 
@@ -89,7 +85,13 @@ export function BodyContainer({ThemeTodo,FnDarkTheme,FnLightTheme}) {
         <>
         <Header ButtonSwitch={test} FnHideTasks={HideTasks} FnShowTasks={ShowTasks} ThemeTodo={ThemeTodo} FndarkTheme={FnDarkTheme} FnlightTheme={FnLightTheme} ></Header>
         <div className="body--container">
-          <Input value={postData} onChange={setPostData} onSubmit={handleSubmit} onKeyDown={handleKeyDown} onClickButtonAdd={handleClickAdd} ></Input>
+
+          {alert && <div className="bg-amber-100 text-red-500 flex justify-center items-center rounded-lg">
+                todo lenght must be more than 2 caracters!
+              </div>
+          }
+
+          <Input name="inputData" onSubmit={handleSubmit} ></Input>
           {dataMap.length !== 0 ?(dataMap):(loading)}
         </div>
         <Footer remaining={nbTrueData}></Footer>

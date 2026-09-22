@@ -1,10 +1,10 @@
 
 .body--page{
-    @apply min-h-svh flex flex-col justify-center box-border;
+    @apply min-h-svh flex flex-col justify-center items-center box-border;
 }
 
 .container{
-    @apply flex flex-col gap-2 w-full h-auto p-[5%];
+    @apply flex flex-col  gap-2 w-full h-auto p-[5%];
 }
 
 .head--container{
@@ -12,7 +12,7 @@
 }
 
 .body--container{
-    @apply grid auto-rows-13.5 gap-5;
+    @apply grid auto-rows-13.5 gap-5  md:grid-cols-2 lg:grid-cols-3;
 }
 
 .foot--container{
